@@ -243005,7 +243005,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnDelay: 2
-  cameraController: {fileID: 0}
+  cameraController: {fileID: 519420034}
+  deathParticlePrefab: {fileID: 6264872107598189593, guid: 7080f528bf4684790be484d1f2ad7c73, type: 3}
 --- !u!1 &1535890502
 GameObject:
   m_ObjectHideFlags: 0

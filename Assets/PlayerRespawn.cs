@@ -5,6 +5,7 @@ public class PlayerRespawn : MonoBehaviour
 {
     [SerializeField] private float respawnDelay = 1f;
     [SerializeField] private CameraController cameraController;
+    [SerializeField] private GameObject deathParticlePrefab;
     private void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
@@ -25,6 +26,13 @@ public class PlayerRespawn : MonoBehaviour
         }
         // In case player collides with something else
         gameObject.GetComponent<Collider2D>().enabled = false;
+
+        // Instantiate death particle effect
+        GameObject deathParticles = Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+        if (deathParticles != null)
+        {
+            Destroy(deathParticles, 2f);
+        }
 
         yield return new WaitForSeconds(respawnDelay);
 
