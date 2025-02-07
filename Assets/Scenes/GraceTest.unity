@@ -243713,6 +243713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2005080240168283675, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
+      propertyPath: icePlatformPrefab
+      value: 
+      objectReference: {fileID: 1822729988413799804, guid: 4fdec52040d664fd38d1104e093c49ea, type: 3}
     - target: {fileID: 2954502692105449883, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9
