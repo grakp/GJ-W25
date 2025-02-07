@@ -77,3 +77,6 @@ crashlytics-build.properties
 
 # VSCode
 *.vscode/
+
+# Assets
+/[Aa]ssets/Sprites/*
