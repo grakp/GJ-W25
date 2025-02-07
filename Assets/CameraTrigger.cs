@@ -1,9 +1,13 @@
 using UnityEngine;
+using System.Collections;
 
 public class CameraTrigger : MonoBehaviour
 {
     public CameraController cameraController;
     public Vector3 newCameraPosition;
+    public float disableDuration = 1f;  // Duration to disable the trigger
+
+    private Collider2D triggerCollider;
 
     public enum CameraMovementDirection
     {
@@ -17,12 +21,18 @@ public class CameraTrigger : MonoBehaviour
 
     private bool isPlayerInside = false;
 
+    private void Start()
+    {
+        triggerCollider = GetComponent<Collider2D>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !isPlayerInside)
         {
             SlideCamera();
             isPlayerInside = true;
+            StartCoroutine(DisableTriggerTemporarily());
         }
     }
 
@@ -68,5 +78,15 @@ public class CameraTrigger : MonoBehaviour
 
         Vector3 targetPosition = cameraController.transform.position + slideAmount;
         cameraController.SlideToPosition(targetPosition);
+    }
+
+    private IEnumerator DisableTriggerTemporarily()
+    {
+        // Disable the trigger and enable it as a regular collider
+        triggerCollider.isTrigger = false;
+
+        yield return new WaitForSeconds(disableDuration);
+
+        triggerCollider.isTrigger = true;
     }
 }
