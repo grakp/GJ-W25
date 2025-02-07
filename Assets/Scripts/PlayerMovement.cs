@@ -4,7 +4,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private float horizontal;
-    private bool direction = true; // true = left, false = right
+    private bool facingRight = true;
 
     [SerializeField] private float speed;
     [SerializeField] private float jumpingPower;
@@ -43,9 +43,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        if (direction && horizontal > 0f || !direction && horizontal < 0f)
+        if (facingRight && horizontal < 0f || !facingRight && horizontal > 0f)
         {
-            direction = !direction;
+            facingRight = !facingRight;
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
