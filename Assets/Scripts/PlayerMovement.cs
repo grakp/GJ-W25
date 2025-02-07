@@ -1,5 +1,4 @@
-using System.IO;
-using System.Security.Cryptography;
+using System;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour

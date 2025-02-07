@@ -34,6 +34,17 @@ public class PlayerIceShooting : MonoBehaviour
             iceClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
             iceClone.GetComponent<Rigidbody2D>().linearVelocity = firePoint.right * iceSpeed;
+            iceClone.tag = "Projectile";
+
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            GameObject iceClone = Instantiate(ice);
+            iceClone.transform.position = firePoint.position;
+            iceClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
+
+            iceClone.GetComponent<Rigidbody2D>().linearVelocity = firePoint.right * iceSpeed;
+            iceClone.tag = "Freeze";
 
         }
     }
