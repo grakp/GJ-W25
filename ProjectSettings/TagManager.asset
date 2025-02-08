@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Freeze
+  - Collectable
   layers:
   - Default
   - TransparentFX
