@@ -41,12 +41,12 @@ public class EnemyBeeMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(0, moveSpeed);
             }
 
-            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+            if (Mathf.Abs(transform.position.y - currentPoint.position.y) < 0.5f && currentPoint == pointB.transform)
             {
                 currentPoint = pointA.transform;
                 dirX *= -1;
             }
-            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+            if (Mathf.Abs(transform.position.y - currentPoint.position.y) < 0.5f && currentPoint == pointA.transform)
             {
                 currentPoint = pointB.transform;
                 dirX *= -1;
