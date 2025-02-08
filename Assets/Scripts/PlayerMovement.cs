@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 direction;
     private bool isLeft = true; // true = left, false = right
 
+    public AudioSource footsteps;
+
     void Start()
     {
         playerCollision = GetComponent<PlayerCollision>();
@@ -38,6 +40,14 @@ public class PlayerMovement : MonoBehaviour
         horizontal = Input.GetAxisRaw("Horizontal");
         vertical = Input.GetAxisRaw("Vertical");
         direction = new Vector2(horizontal, vertical);
+
+        if (horizontal != 0 && playerCollision.onGround)
+        {
+            footsteps.enabled = true;
+        } else
+        {
+            footsteps.enabled = false;
+        }
 
         if (playerCollision.onWall && Input.GetButton("Fire3") && canMove)
         {
@@ -124,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, (new Vector2(dir.x * speed, rb.linearVelocity.y)), wallJumpLerp * Time.deltaTime);
+            
         }
     }
 
