@@ -6,6 +6,7 @@ public class EnemySnowmanMovement : MonoBehaviour
     public float jumpingPower;
     private Rigidbody2D rb;
     bool isGrounded;
+    public GameObject enemy;
 
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -19,8 +20,8 @@ public class EnemySnowmanMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int randomNumber = Random.Range(1, 5000);
-        if (randomNumber < 2 && isGrounded)
+        int randomNumber = Random.Range(1, 2000);
+        if (randomNumber < 2 && isGrounded && !enemy.GetComponent<Hazard>().isFrozen)
         {
             rb.linearVelocity = new Vector2(0, jumpingPower);
 

@@ -45,11 +45,11 @@ GameObject:
   - component: {fileID: 384808043701367818}
   - component: {fileID: 7479211775516360529}
   - component: {fileID: 765477105659775010}
-  - component: {fileID: 4339362846724624382}
   - component: {fileID: 7579953550430480901}
+  - component: {fileID: 4339362846724624382}
   m_Layer: 0
   m_Name: Snowman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,10 +232,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpingPower: 5
+  enemy: {fileID: 866866831460999290}
   groundCheck: {fileID: 6524038154300310473}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &7579953550430480901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866866831460999290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2951be109924b6cbfd798aac3e4125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frozenSprite: {fileID: -8009513197434778597, guid: f508b7fd6018840519854c9036d6f141, type: 3}
+  isFrozen: 0
+  freezeDuration: 3
 --- !u!61 &4339362846724624382
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -282,18 +298,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.988189, y: 1.3827337}
   m_EdgeRadius: 0
---- !u!114 &7579953550430480901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866866831460999290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2951be109924b6cbfd798aac3e4125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6826060734894162233
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +309,7 @@ GameObject:
   - component: {fileID: 853162339043301903}
   m_Layer: 0
   m_Name: EnemySnowman
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
