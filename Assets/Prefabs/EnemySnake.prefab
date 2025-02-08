@@ -14,11 +14,11 @@ GameObject:
   - component: {fileID: 7152184088249883030}
   - component: {fileID: 7663059047855233078}
   - component: {fileID: 1631133608508461428}
-  - component: {fileID: 6077560874681931213}
   - component: {fileID: 980101889004327026}
+  - component: {fileID: 6077560874681931213}
   m_Layer: 0
   m_Name: Snake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -202,8 +202,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dirX: 1
   moveSpeed: 3
+  enemy: {fileID: 82599126524267925}
   pointA: {fileID: 6598367268414046206}
   pointB: {fileID: 6740924372206996096}
+--- !u!114 &980101889004327026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 82599126524267925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2951be109924b6cbfd798aac3e4125, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frozenSprite: {fileID: -3753579385025995478, guid: f508b7fd6018840519854c9036d6f141, type: 3}
+  isFrozen: 0
+  freezeDuration: 2
 --- !u!61 &6077560874681931213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -250,18 +266,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0350118, y: 1.0077336}
   m_EdgeRadius: 0
---- !u!114 &980101889004327026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 82599126524267925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d2951be109924b6cbfd798aac3e4125, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6093380210923169147
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,7 +277,7 @@ GameObject:
   - component: {fileID: 3831424626222274799}
   m_Layer: 0
   m_Name: EnemySnake
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -321,7 +325,7 @@ Transform:
   m_GameObject: {fileID: 6598367268414046206}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.42, y: -3.24, z: 0}
+  m_LocalPosition: {x: -0.85, y: -3.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -352,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 6740924372206996096}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.32, y: -3.22, z: 0}
+  m_LocalPosition: {x: 1.03, y: -3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
