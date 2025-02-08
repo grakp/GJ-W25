@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WilliamLevelSelect.unity
     guid: 05deba244180306438d61472edd97071
   - enabled: 1
+    path: Assets/Scenes/GraceTest.unity
+    guid: e64b53f2d5842406e96a316f18e3a61c
+  - enabled: 1
     path: Assets/Scenes/WilliamScene.unity
     guid: ccdda7fe00dc24e4f9a353b5b4d99edc
   m_configObjects:
