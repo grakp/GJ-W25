@@ -246702,7 +246702,7 @@ GameObject:
   - component: {fileID: 2053779788}
   - component: {fileID: 2053779787}
   - component: {fileID: 2053779786}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247325,8 +247325,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1822729988413799804, guid: 4fdec52040d664fd38d1104e093c49ea, type: 3}
     - target: {fileID: 2268331168268044555, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
+      propertyPath: leftOffset.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268331168268044555, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
+      propertyPath: rightOffset.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268331168268044555, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
       propertyPath: bottomOffset.y
       value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268331168268044555, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
+      propertyPath: wallLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 2547569538876172576, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
       propertyPath: m_Size.x
