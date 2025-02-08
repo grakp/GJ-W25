@@ -7,12 +7,19 @@ TagManager:
   - Projectile
   - Freeze
 <<<<<<< HEAD
+<<<<<<< HEAD
   - Platform
   - Enemy
   - Ground
 =======
   - Collectable
 >>>>>>> d816909e0abe68a11f885305682242e83789b54f
+=======
+  - Platform
+  - Enemy
+  - Ground
+  - Collectable
+>>>>>>> 0ec76b7f6a2f143f64f6019b935ec8c48f31df42
   layers:
   - Default
   - TransparentFX
