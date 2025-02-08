@@ -6,9 +6,13 @@ TagManager:
   tags:
   - Projectile
   - Freeze
+<<<<<<< HEAD
   - Platform
   - Enemy
   - Ground
+=======
+  - Collectable
+>>>>>>> d816909e0abe68a11f885305682242e83789b54f
   layers:
   - Default
   - TransparentFX
@@ -17,7 +21,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Wall
   - 
   - 
   - 
