@@ -7,6 +7,7 @@ public class Hazard : MonoBehaviour
     public Sprite frozenSprite;
     public bool isFrozen;
     public float freezeDuration;
+    public bool canBeFrozen = true;
 
     private SpriteRenderer spriteRenderer;
     private Animator animator;
@@ -20,7 +21,7 @@ public class Hazard : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (isFrozen)
+        if (isFrozen && canBeFrozen)
         {
             StartCoroutine(FreezeTemporarily());
         }
@@ -38,7 +39,7 @@ public class Hazard : MonoBehaviour
             }
         }
 
-        if (other.CompareTag("Projectile"))
+        if (other.CompareTag("Projectile") && canBeFrozen)
         {
             isFrozen = true;
         }
