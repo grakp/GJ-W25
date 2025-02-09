@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
         if (horizontal != 0 && playerCollision.onGround)
         {
             footsteps.enabled = true;
-        } else
+        }
+        else
         {
             footsteps.enabled = false;
         }
@@ -73,7 +74,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.gravityScale = 0;
             if (horizontal > .2f || horizontal < -.2f)
+            {
                 rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);
+            }
 
             float speedModifier = vertical > 0 ? .5f : 1;
 
@@ -86,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (playerCollision.onWall && !playerCollision.onGround)
         {
-            if (horizontal != 0 && !wallGrab)
+            if (horizontal != 0 && !wallGrab && Input.GetButton("Fire3"))
             {
                 wallSlide = true;
                 WallSlide();
@@ -134,7 +137,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, (new Vector2(dir.x * speed, rb.linearVelocity.y)), wallJumpLerp * Time.deltaTime);
-            
+
         }
     }
 
@@ -155,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 wallDir = playerCollision.onRightWall ? Vector2.left : Vector2.right;
 
-        Jump((Vector2.up / 1.5f + wallDir / 1.5f));
+        Jump((Vector2.up * 2f + wallDir * 1.5f));
 
         wallJumped = true;
     }

@@ -22,7 +22,6 @@ public class CameraTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             SlideCamera();
-            ChangePlayerSpeed();
         }
     }
 
@@ -32,6 +31,11 @@ public class CameraTrigger : MonoBehaviour
         if (cameraController != null)
         {
             cameraController.SlideToPosition(targetCameraPosition);
+            // Only change player speed if we're actually sliding to another position
+            if (cameraController.transform.position != targetCameraPosition)
+            {
+                ChangePlayerSpeed();
+            }
         }
     }
 
@@ -45,7 +49,6 @@ public class CameraTrigger : MonoBehaviour
     {
         if (player != null)
         {
-            Debug.Log("uhhh");
             player.speed *= speedReductionFactor;
         }
         StartCoroutine(ResetSpeedDelay());
@@ -55,7 +58,6 @@ public class CameraTrigger : MonoBehaviour
     {
         if (player != null)
         {
-            Debug.Log("back ");
             player.speed = originalSpeed;
         }
     }
