@@ -23,9 +23,11 @@ public class PlayerIceShooting : MonoBehaviour
 
     public int shotsLeft;
     public int platformsLeft;
+    public int maxPlatforms;
     [SerializeField] private AudioSource noAmmoSound;
     public Text ammoCounter;
     public Text platformCounter;
+    private bool recharging;
 
 
     [SerializeField] private AudioSource platformSound;
@@ -33,6 +35,8 @@ public class PlayerIceShooting : MonoBehaviour
 
     void Start()
     {
+        recharging = false;
+        platformsLeft = maxPlatforms;
         playerRb = player.GetComponent<Rigidbody2D>();
         ammoCounter.text = shotsLeft.ToString();
         platformCounter.text = platformsLeft.ToString();
@@ -54,22 +58,28 @@ public class PlayerIceShooting : MonoBehaviour
             shootIcePlatform = true;
         }
 
-        if (platformsLeft < 3)
+        if (recharging)
         {
             StartCoroutine(RechargePlatforms());
         }
+
+        ammoCounter.text = shotsLeft.ToString();
+        if (platformsLeft > maxPlatforms)
+        {
+            platformsLeft = maxPlatforms;
+        } // if it is charging when respawning it might go to 4 or more
+        platformCounter.text = platformsLeft.ToString();
 
     }
 
     IEnumerator RechargePlatforms()
     {
-
+        recharging = false;
         yield return new WaitForSeconds(4);
         platformsLeft += 1;
         platformCounter.text = platformsLeft.ToString();
-        if (platformsLeft == 3)
-        {
-            yield return null;
+        if (platformsLeft == maxPlatforms) {
+            yield break;
         }
     }
 
@@ -122,6 +132,7 @@ public class PlayerIceShooting : MonoBehaviour
             platformSound.Play();
             shotsLeft -= 1;
             platformsLeft -= 1;
+            recharging = true;
             ammoCounter.text = shotsLeft.ToString();
             platformCounter.text = platformsLeft.ToString();
 

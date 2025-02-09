@@ -42,6 +42,7 @@ Transform:
   - {fileID: 4545181143151136428}
   - {fileID: 7784601278742316557}
   - {fileID: 5991490732199774572}
+  - {fileID: 3334114935789312686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6560620349612052676
@@ -242,6 +243,12 @@ MonoBehaviour:
   spawnDistance: 1
   platformMass: 100
   icePlatformPrefab: {fileID: 1822729988413799804, guid: 4fdec52040d664fd38d1104e093c49ea, type: 3}
+  shotsLeft: 100
+  platformsLeft: 3
+  maxPlatforms: 3
+  noAmmoSound: {fileID: 5582381159837041856}
+  ammoCounter: {fileID: 0}
+  platformCounter: {fileID: 0}
   platformSound: {fileID: 5712348039073455295}
   projectileSound: {fileID: 2694708295789133978}
 --- !u!114 &3390016764400897714
@@ -273,6 +280,7 @@ MonoBehaviour:
   respawnDelay: 2
   cameraController: {fileID: 0}
   deathParticlePrefab: {fileID: 6264872107598189593, guid: 7080f528bf4684790be484d1f2ad7c73, type: 3}
+  player: {fileID: 420104727797592781}
   deathSound: {fileID: 6937196046010736613}
 --- !u!1 &1861230671271271158
 GameObject:
@@ -448,6 +456,135 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: c1a402bea51c62145a53ca8cc89f5e85, type: 3}
   m_Resource: {fileID: 8300000, guid: c1a402bea51c62145a53ca8cc89f5e85, type: 3}
   m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!1 &3038930103016315168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3334114935789312686}
+  - component: {fileID: 5582381159837041856}
+  m_Layer: 0
+  m_Name: noAmmoSFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3334114935789312686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038930103016315168}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2954502692105449883}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &5582381159837041856
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3038930103016315168}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: f9310656e941c4e4e9909d55509ffffb, type: 3}
+  m_Resource: {fileID: 8300000, guid: f9310656e941c4e4e9909d55509ffffb, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
