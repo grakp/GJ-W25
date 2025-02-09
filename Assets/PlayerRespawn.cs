@@ -7,6 +7,8 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject deathParticlePrefab;
 
+    public GameObject player;
+
     public AudioSource deathSound;
 
     private void Start()
@@ -37,7 +39,12 @@ public class PlayerRespawn : MonoBehaviour
         {
             Destroy(deathParticles, 2f);
         }
+       
         deathSound.Play();
+        player.GetComponent<PlayerIceShooting>().shotsLeft = 100;
+        player.GetComponent<PlayerIceShooting>().platformsLeft = 3;
+
+
         yield return new WaitForSeconds(respawnDelay);
 
         gameObject.GetComponent<Collider2D>().enabled = true;
