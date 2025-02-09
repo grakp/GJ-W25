@@ -7,6 +7,10 @@ public class Collectable : MonoBehaviour
     public Text collectablesCollectedText;
     private AudioSource collectSound;
 
+    public static int GetCollectables() { 
+        return collectablesCollected; 
+    }
+
     private void Start()
     {
         collectablesCollectedText = GameObject.Find("CollectablesCollectedText").GetComponent<Text>();
