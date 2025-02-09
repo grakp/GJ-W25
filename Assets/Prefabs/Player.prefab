@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2005080240168283675}
   - component: {fileID: 3390016764400897714}
   - component: {fileID: 9110467517756864892}
+  - component: {fileID: 2258887971161394548}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -259,6 +260,22 @@ MonoBehaviour:
   fallMultiplier: 2.5
   lowJumpMultiplier: 5
 --- !u!114 &9110467517756864892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420104727797592781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42c680f242dc34b1488550405136be66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawnDelay: 2
+  cameraController: {fileID: 0}
+  deathParticlePrefab: {fileID: 6264872107598189593, guid: 7080f528bf4684790be484d1f2ad7c73, type: 3}
+  deathSound: {fileID: 6937196046010736613}
+--- !u!114 &2258887971161394548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
