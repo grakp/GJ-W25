@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GraceTest.unity
     guid: e64b53f2d5842406e96a316f18e3a61c
+  - enabled: 1
+    path: Assets/Scenes/WilliamTest.unity
+    guid: 1d798f6814180674ca351a83dabcd208
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

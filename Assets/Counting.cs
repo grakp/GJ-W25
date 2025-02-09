@@ -10,6 +10,7 @@ public class Counting : MonoBehaviour
     private Collectable collectable;
     private PlayerRespawn player;
 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
