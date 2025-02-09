@@ -5,17 +5,22 @@ public class Collectable : MonoBehaviour
 {
     private static int collectablesCollected = 0;
     public Text collectablesCollectedText;
-    private AudioSource collectSound;
+    public AudioSource collectSound;
 
-    public static int GetCollectables() { 
-        return collectablesCollected; 
+    public static int GetCollectables()
+    {
+        return collectablesCollected;
+    }
+
+    public static void ResetCollectables()
+    {
+        collectablesCollected = 0;
     }
 
     private void Start()
     {
         collectablesCollectedText = GameObject.Find("CollectablesCollectedText").GetComponent<Text>();
         UpdateCollectablesCollectedText();
-        collectSound = GetComponent<AudioSource>();
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

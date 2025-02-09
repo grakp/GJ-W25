@@ -6,20 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/WilliamMainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 32cdc4f541340894a8329f62dbdc0e87
   - enabled: 1
-    path: Assets/Scenes/WilliamLevelSelect.unity
+    path: Assets/Scenes/LevelSelect.unity
     guid: 05deba244180306438d61472edd97071
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 31fe16c4cc6a2cc42b497fcd66dcab83
   - enabled: 1
-    path: Assets/Scenes/WilliamWinScreen.unity
+    path: Assets/Scenes/WinScreen.unity
     guid: 296e6417de038204bb90e42963ed97cb
   - enabled: 1
-    path: Assets/Scenes/GraceTest.unity
-    guid: e64b53f2d5842406e96a316f18e3a61c
+    path: Assets/Scenes/Level1.unity
+    guid: 35674ed1148b24dc2ba45947022c605e
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: c57ab6fb78dd84bff8afcff8982517f7
