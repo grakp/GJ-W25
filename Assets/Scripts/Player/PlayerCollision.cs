@@ -30,13 +30,4 @@ public class PlayerCollision : MonoBehaviour
 
         wallSide = onRightWall ? -1 : 1;
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Collectable"))
-        {
-            Destroy(other.gameObject);
-            // Do something idk, sfx, particles, ui, etc.
-        }
-    }
 }
