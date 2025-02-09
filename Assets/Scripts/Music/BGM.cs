@@ -2,15 +2,18 @@ using UnityEngine;
 
 public class BGM : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        DontDestroyOnLoad(this.gameObject);
-    }
+    private static BGM instance;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }
