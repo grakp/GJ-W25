@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Instructions.unity
     guid: 31fe16c4cc6a2cc42b497fcd66dcab83
   - enabled: 1
+    path: Assets/Scenes/WilliamWinScreen.unity
+    guid: 296e6417de038204bb90e42963ed97cb
+  - enabled: 1
     path: Assets/Scenes/GraceTest.unity
     guid: e64b53f2d5842406e96a316f18e3a61c
-  - enabled: 1
-    path: Assets/Scenes/WilliamScene.unity
-    guid: ccdda7fe00dc24e4f9a353b5b4d99edc
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

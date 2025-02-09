@@ -6,10 +6,16 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private float respawnDelay = 1f;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject deathParticlePrefab;
+    private static int numDeaths = 0;
 
     public GameObject player;
 
     public AudioSource deathSound;
+
+    public static int GetDeaths()
+    {
+        return numDeaths;
+    }
 
     private void Start()
     {
@@ -48,6 +54,7 @@ public class PlayerRespawn : MonoBehaviour
         foreach (GameObject platform in platforms) {
             Destroy(platform);
         }
+        numDeaths++;
 
 
         yield return new WaitForSeconds(respawnDelay);
