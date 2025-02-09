@@ -7,6 +7,8 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject deathParticlePrefab;
 
+
+
     public AudioSource deathSound;
 
     private void Start()

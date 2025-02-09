@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerIceShooting : MonoBehaviour
 {
@@ -20,12 +21,21 @@ public class PlayerIceShooting : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
+    public int shotsLeft;
+    public int platformsLeft;
+    [SerializeField] private AudioSource noAmmoSound;
+    public Text ammoCounter;
+    public Text platformCounter;
+
+
     [SerializeField] private AudioSource platformSound;
     [SerializeField] private AudioSource projectileSound;
 
     void Start()
     {
         playerRb = player.GetComponent<Rigidbody2D>();
+        ammoCounter.text = shotsLeft.ToString();
+        platformCounter.text = platformsLeft.ToString();
     }
 
     void Update()
@@ -43,7 +53,26 @@ public class PlayerIceShooting : MonoBehaviour
         {
             shootIcePlatform = true;
         }
+
+        if (platformsLeft < 3)
+        {
+            StartCoroutine(RechargePlatforms());
+        }
+
     }
+
+    IEnumerator RechargePlatforms()
+    {
+
+        yield return new WaitForSeconds(4);
+        platformsLeft += 1;
+        platformCounter.text = platformsLeft.ToString();
+        if (platformsLeft == 3)
+        {
+            yield return null;
+        }
+    }
+
 
     private void FixedUpdate()
     {
@@ -55,30 +84,52 @@ public class PlayerIceShooting : MonoBehaviour
 
     private void ShootProjectile()
     {
-        GameObject iceClone = Instantiate(ice);
-        iceClone.transform.position = firePoint.position;
-        iceClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
+        if (shotsLeft > 0)
+        {
+            GameObject iceClone = Instantiate(ice);
+            iceClone.transform.position = firePoint.position;
+            iceClone.transform.rotation = Quaternion.Euler(0, 0, lookAngle);
 
-        iceClone.GetComponent<Rigidbody2D>().linearVelocity = firePoint.right * iceSpeed;
-        iceClone.tag = "Projectile";
+            iceClone.GetComponent<Rigidbody2D>().linearVelocity = firePoint.right * iceSpeed;
+            iceClone.tag = "Projectile";
 
-        projectileSound.Play();
+            projectileSound.Play();
+            shotsLeft -= 1;
+            ammoCounter.text = shotsLeft.ToString();
+            platformCounter.text = platformsLeft.ToString();
+        } else
+        {
+            noAmmoSound.Play();
+        }
     }
 
     private void ShootIcePlatform()
     {
-        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 playerPosition = transform.position;
-        Vector2 direction = (mousePosition - playerPosition).normalized;
-        Vector2 spawnPosition = playerPosition + direction * spawnDistance;
-        Vector2 targetPosition = playerPosition + direction * Mathf.Min(Vector2.Distance(playerPosition, mousePosition), maxRange);
+        if (shotsLeft > 0 && platformsLeft > 0)
+        {
+            Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 playerPosition = transform.position;
+            Vector2 direction = (mousePosition - playerPosition).normalized;
+            Vector2 spawnPosition = playerPosition + direction * spawnDistance;
+            Vector2 targetPosition = playerPosition + direction * Mathf.Min(Vector2.Distance(playerPosition, mousePosition), maxRange);
 
-        GameObject newPlatform = Instantiate(icePlatformPrefab, spawnPosition, Quaternion.identity);
-        newPlatform.GetComponent<Rigidbody2D>().linearVelocity = direction * iceSpeed + playerRb.linearVelocity;  // Add player's velocity
+            GameObject newPlatform = Instantiate(icePlatformPrefab, spawnPosition, Quaternion.identity);
+            newPlatform.GetComponent<Rigidbody2D>().linearVelocity = direction * iceSpeed + playerRb.linearVelocity;  // Add player's velocity
 
-        StartCoroutine(MovePlatformTowards(newPlatform, targetPosition));
-        shootIcePlatform = false;
-        platformSound.Play();
+            StartCoroutine(MovePlatformTowards(newPlatform, targetPosition));
+            shootIcePlatform = false;
+
+            platformSound.Play();
+            shotsLeft -= 1;
+            platformsLeft -= 1;
+            ammoCounter.text = shotsLeft.ToString();
+            platformCounter.text = platformsLeft.ToString();
+
+        } else
+        {
+            noAmmoSound.Play();
+            shootIcePlatform = false;
+        }
     }
     private IEnumerator MovePlatformTowards(GameObject platform, Vector3 targetPosition)
     {
