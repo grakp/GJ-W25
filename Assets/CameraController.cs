@@ -10,7 +10,6 @@ public class CameraController : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
     private bool isSliding = false;
 
-
     void Update()
     {
         if (isSliding)
@@ -48,9 +47,6 @@ public class CameraController : MonoBehaviour
 
             yield return null;
         }
-
         transform.position = originalPosition;
     }
-
-
 }
