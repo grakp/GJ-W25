@@ -6,8 +6,12 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private float respawnDelay = 1f;
     [SerializeField] private CameraController cameraController;
     [SerializeField] private GameObject deathParticlePrefab;
+
+    public AudioSource deathSound;
+
     private void Start()
     {
+
         cameraController = Camera.main.GetComponent<CameraController>();
         Vector3 respawnPosition = CheckpointManager.Instance.GetLastCheckpointPosition();
     }
@@ -33,7 +37,7 @@ public class PlayerRespawn : MonoBehaviour
         {
             Destroy(deathParticles, 2f);
         }
-
+        deathSound.Play();
         yield return new WaitForSeconds(respawnDelay);
 
         gameObject.GetComponent<Collider2D>().enabled = true;
