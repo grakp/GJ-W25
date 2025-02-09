@@ -441,6 +441,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
       objectReference: {fileID: 1935376817}
@@ -12056,6 +12060,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
       objectReference: {fileID: 1935376817}
@@ -12121,6 +12129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
@@ -255288,6 +255300,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1791484591096143101, guid: c4a166f50d2624f1e858546bae806d44, type: 3}
   m_PrefabInstance: {fileID: 1537847967}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1540995442 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7326580755638909029, guid: 3f67233b35a49439a92e00d45c54b42a, type: 3}
+  m_PrefabInstance: {fileID: 463981232406259430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1578309681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256895,6 +256912,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
       objectReference: {fileID: 1935376817}
@@ -256960,6 +256981,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
@@ -258279,6 +258304,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 
       objectReference: {fileID: 1935376817}
@@ -258665,6 +258694,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 466350188}
     m_Modifications:
+    - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 1540995442}
     - target: {fileID: 5412781527421376714, guid: e6e8ce82dc9a74166a2f6f5dcce74251, type: 3}
       propertyPath: collectablesCollectedText
       value: 

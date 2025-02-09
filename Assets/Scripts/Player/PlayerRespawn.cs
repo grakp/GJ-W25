@@ -17,6 +17,11 @@ public class PlayerRespawn : MonoBehaviour
         return numDeaths;
     }
 
+    public static void ResetDeaths()
+    {
+        numDeaths = 0;
+    }
+
     private void Start()
     {
 
@@ -45,13 +50,14 @@ public class PlayerRespawn : MonoBehaviour
         {
             Destroy(deathParticles, 2f);
         }
-        
+
         // resetting stuff
         deathSound.Play();
         player.GetComponent<PlayerIceShooting>().shotsLeft = 100;
         player.GetComponent<PlayerIceShooting>().platformsLeft = 3;
         GameObject[] platforms = GameObject.FindGameObjectsWithTag("Platform");
-        foreach (GameObject platform in platforms) {
+        foreach (GameObject platform in platforms)
+        {
             Destroy(platform);
         }
         numDeaths++;
