@@ -12,11 +12,13 @@ public class Hazard : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
     private Sprite originalSprite;
+    private Rigidbody2D rb;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void FixedUpdate()
@@ -59,6 +61,7 @@ public class Hazard : MonoBehaviour
         // Disable the animator and switch to the freeze sprite
         animator.enabled = false;
         spriteRenderer.sprite = frozenSprite;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
 
         // Wait for the freeze duration
         yield return new WaitForSeconds(freezeDuration);
@@ -66,6 +69,10 @@ public class Hazard : MonoBehaviour
         // Restore the animator (it resumes from where it left off)
         animator.enabled = true;
         isFrozen = false;
+
+        rb.constraints = RigidbodyConstraints2D.None;
+        rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+
     }
 
 }
