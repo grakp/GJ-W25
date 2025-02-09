@@ -20,12 +20,12 @@ public class PlayerIceShooting : MonoBehaviour
 
     private Rigidbody2D playerRb;
 
-    private AudioSource[] shootingSounds;
+    [SerializeField] private AudioSource platformSound;
+    [SerializeField] private AudioSource projectileSound;
 
     void Start()
     {
         playerRb = player.GetComponent<Rigidbody2D>();
-        shootingSounds = GetComponents<AudioSource>();
     }
 
     void Update()
@@ -62,7 +62,7 @@ public class PlayerIceShooting : MonoBehaviour
         iceClone.GetComponent<Rigidbody2D>().linearVelocity = firePoint.right * iceSpeed;
         iceClone.tag = "Projectile";
 
-        shootingSounds[1].Play();
+        projectileSound.Play();
     }
 
     private void ShootIcePlatform()
@@ -78,7 +78,7 @@ public class PlayerIceShooting : MonoBehaviour
 
         StartCoroutine(MovePlatformTowards(newPlatform, targetPosition));
         shootIcePlatform = false;
-        shootingSounds[0].Play();
+        platformSound.Play();
     }
     private IEnumerator MovePlatformTowards(GameObject platform, Vector3 targetPosition)
     {
